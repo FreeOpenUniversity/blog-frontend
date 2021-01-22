@@ -1,17 +1,15 @@
 import Link from "next/link";
+import ArticleCard from './articleCard';
+import BlogLayout from './bloglayout';
 
 export default function Article({ articles }) {
     return (
-        <>
+        <BlogLayout>
             {
                 articles.map((article, index) =>
-                    <div key={index}>
-                        <Link as={`/blogs/${article.slug}`} href="/blogs/[id]">
-                            <h1>{article.title}</h1>
-                        </Link>
-                    </div>)
+                    <ArticleCard article={article} key={index} />)
             }
-        </>
+        </BlogLayout>
     )
 }
 

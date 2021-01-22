@@ -20,14 +20,15 @@ iframe {
 	display: block;
 }
 
-#category {
+.blogcat{
 	font-family: Staatliches;
-	font-weight: 500;
+	font-weight: bolder;
+	font-size: 20px;
 }
 
-#title {
+.blogtitle {
 	letter-spacing: 0.4px;
-	font-size: 22px;
+	font-size: 25px;
 	font-size: 1.375rem;
 	line-height: 1.13636;
 }
