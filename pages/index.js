@@ -1,65 +1,43 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { fetchAPI } from "../lib/api";
+import Top from '../components/top';
+import Layout from "../components/layout";
+import Project from "../components/project";
 
-export default function Home() {
+export default function Home({ articles }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
+      <div>
+        <Head>
+          <title>Create Next App</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+        <main>
+          <Top />
+          <Project />
+        </main>
+        <footer>
+          <div className="mt5 mb2 tc">
+            <a href="https://discord.gg/4svG863772" target="_blank" rel="noopener noreferrer">
+              <img className="w5" src="/images/join-us-on-discord.png" alt="discord banner" />
+            </a>
+          </div>
+        </footer>
+      </div>
+    </Layout>
   )
 }
+
+export async function getStaticProps() {
+  // Run API calls in parallel
+  const [articles] = await Promise.all([
+    fetchAPI("/articles?status=published")
+  ]);
+
+  return {
+    props: { articles },
+    revalidate: 1,
+  };
+}
+
