@@ -2,10 +2,19 @@ import Image from "../../components/image";
 import ReactMarkdown from "react-markdown";
 import { fetchAPI } from "../../lib/api";
 import BlogLayout from '../../components/bloglayout';
+import Seo from "../../components/seo";
 
 export default function Blog({ article }) {
+    const seo = {
+        metaTitle: article.title,
+        metaDescription: article.description,
+        shareImage: article.image,
+        article: true,
+    };
+
     return (
         <BlogLayout>
+            <Seo seo={seo} />
             <div className="pa2">
                 <h1 className="title1 ttc f1">{article.title}</h1>
             </div>

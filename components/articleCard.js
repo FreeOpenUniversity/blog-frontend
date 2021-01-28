@@ -9,10 +9,8 @@ const ArticleCard = ({ article }) =>
                 <div className="w-50 w-100-m pa2">
                     <div>
                         <a className="link gray">
-                            <div className="">
-                                <div className="">
-                                    <Image image={article.image} />
-                                </div>
+                            <div>
+                                <Image image={article.image} />
                             </div>
                         </a>
 

@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { fetchAPI } from "../lib/api";
 import Top from '../components/top';
 import Layout from "../components/layout";
 import Project from "../components/project";
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
     <Layout>
       <div>
@@ -29,15 +28,4 @@ export default function Home({ articles }) {
   )
 }
 
-export async function getStaticProps() {
-  // Run API calls in parallel
-  const [articles] = await Promise.all([
-    fetchAPI("/articles?status=published")
-  ]);
-
-  return {
-    props: { articles },
-    revalidate: 1,
-  };
-}
 
