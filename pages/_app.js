@@ -14,7 +14,13 @@ function MyApp({ Component, pageProps }) {
 
   return <>
     <Head>
-      {/* <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} /> */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta
+        name="description"
+        content="The Free Open University Project is a team of volunteer programmers committed to making university education free and open to all without restriction."
+      />
+      <meta name="author" content="CIS Team" />
+      <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Staatliches" />
