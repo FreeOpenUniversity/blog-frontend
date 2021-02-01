@@ -17,9 +17,9 @@ const projects = [
 
 export default function Project() {
     return (
-        <div className="tc">
-            <h2 className="Staat f2 dark-gray">Projects</h2>
-            <p className="w-40-l w-80 f4 fw4 center segoe dark-gray">
+        <div className="tc bg-dark-gray white pv3">
+            <h2 className="Staat f2">Projects</h2>
+            <p className="w-40-l w-80 fw4 center segoe">
                 We have come together through volunteer matching sites to build an automated professor along with
                 automation software to generate textbooks and provide support for learners of every topic available. These below are our current projects:
             </p>

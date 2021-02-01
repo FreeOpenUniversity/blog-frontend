@@ -2,19 +2,24 @@ import Head from 'next/head'
 import Top from '../components/top';
 import Layout from "../components/layout";
 import Project from "../components/project";
+import Demo from '../components/demo';
+import BlogDisplay from '../components/blogdisplay';
+import { fetchAPI } from "../lib/api";
 
-export default function Home() {
+export default function Home({ articles }) {
   return (
     <Layout>
       <div>
         <Head>
-          <title>Create Next App</title>
+          <title>Free Open University - Home of Free Learning</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <main>
           <Top />
+          <Demo />
           <Project />
+          <BlogDisplay articles={articles} />
+
         </main>
         <footer>
           <div className="mt5 mb2 tc">
@@ -26,6 +31,18 @@ export default function Home() {
       </div>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  // Run API calls in parallel
+  const [articles] = await Promise.all([
+    fetchAPI("/articles?status=published")
+  ]);
+
+  return {
+    props: { articles },
+    revalidate: 1,
+  };
 }
 
 
