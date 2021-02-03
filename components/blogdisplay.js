@@ -23,9 +23,12 @@ export default function BlogDisplay({ articles }) {
     const displayArticles = articles.slice(0, 3)
     return (
         <div className="tc w-80 center">
-            <Link href="/blogs"><a id="blogs"><h2 className="Staat f2 underline pointer">NLP Blogs</h2></a></Link>
+            <div className="w5 tc center">
+                <a id="blogs" href="/blogs" target="_blank" rel="noopener noreferrer">
+                    <h2 className="Staat f2 underline pointer">NLP Blogs</h2>
+                </a>
+            </div>
             <div className="flex items-center justify-center center flex-nowrap-l flex-wrap">
-
                 {
                     articles
                         ? displayArticles.map((article, index) => <DisplayCard key={index} article={article} />)

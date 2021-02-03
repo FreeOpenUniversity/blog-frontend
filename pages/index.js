@@ -13,6 +13,7 @@ export default function Home({ articles }) {
         <Head>
           <title>Free Open University - Home of Free Learning</title>
           <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css" />
         </Head>
         <main>
           <Top />
@@ -22,10 +23,14 @@ export default function Home({ articles }) {
 
         </main>
         <footer>
-          <div className="mt5 mb2 tc">
+          <div className="mt5 tc dark-gray flex items-center justify-center mb2">
             <a href="https://discord.gg/4svG863772" target="_blank" rel="noopener noreferrer">
-              <img className="w5" src="/images/join-us-on-discord.png" alt="discord banner" />
+              <img src="/images/discord-brands.svg" alt="discord logo" className="w3 ph2 grow" />
             </a>
+            <a href="https://github.com/FreeOpenUniversity" target="_blank" rel="noopener noreferrer">
+              <img src="/images/github-brands.svg" alt="github logo" className="w3 ph2 grow" />
+            </a>
+
           </div>
         </footer>
       </div>
