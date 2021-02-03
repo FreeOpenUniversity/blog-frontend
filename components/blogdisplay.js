@@ -23,7 +23,7 @@ export default function BlogDisplay({ articles }) {
     const displayArticles = articles.slice(0, 3)
     return (
         <div className="tc w-80 center">
-            <Link as={'/blogs'} href="/blogs"><h2 className="Staat f2 underline pointer">NLP Blogs</h2></Link>
+            <Link href="/blogs"><a id="blogs"><h2 className="Staat f2 underline pointer">NLP Blogs</h2></a></Link>
             <div className="flex items-center justify-center center flex-nowrap-l flex-wrap">
 
                 {
