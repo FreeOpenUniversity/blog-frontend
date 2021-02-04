@@ -28,7 +28,7 @@ export default function BlogDisplay({ articles }) {
                     <h2 className="Staat f2 underline pointer">NLP Blogs</h2>
                 </a>
             </div>
-            <div className="flex items-center justify-center center flex-nowrap-l flex-wrap">
+            <div className="flex items-start justify-center center flex-nowrap-l flex-wrap">
                 {
                     articles
                         ? displayArticles.map((article, index) => <DisplayCard key={index} article={article} />)
