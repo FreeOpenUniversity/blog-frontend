@@ -13,7 +13,7 @@ export default function Demo() {
                 </div>
                 <div className="w-50-l w-100 flex justify-center items-center flex-wrap mb2">
                     <div className="ph5 pv1 ph0-m">
-                        <img src="/images/demo-screenshot.jpg" className="shadow-2" />
+                        <img src="/images/demo-screenshot.jpg" className="shadow-2" alt="demo website screenshot" />
                     </div>
                     <a href="http://66.76.242.195:3000/" target="_blank" rel="noopener noreferrer">
                         <button

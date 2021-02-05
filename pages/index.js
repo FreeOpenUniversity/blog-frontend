@@ -13,7 +13,6 @@ export default function Home({ articles }) {
         <Head>
           <title>Free Open University - Home of Free Learning</title>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/font-awesome.min.css" />
         </Head>
         <main>
           <Top />
