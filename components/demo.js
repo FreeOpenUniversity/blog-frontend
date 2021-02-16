@@ -12,12 +12,12 @@ export default function Demo() {
                     </p>
                 </div>
                 <div className="w-50-l w-100 flex justify-center items-center flex-wrap mb2">
-                    <div className="ph5 pv1 ph0-m">
-                        <img src="/images/demo-screenshot.jpg" className="shadow-2" alt="demo website screenshot" />
+                    <div className="ph4 pv1 ph0-m">
+                        <img src="/images/demo.png" alt="demo website screenshot" />
                     </div>
                     <a href="http://66.76.242.195:3000/" target="_blank" rel="noopener noreferrer">
                         <button
-                            className="br-pill no-underline white f4 ph3 pv2 grow outline-0 bn pointer avenir ttu emerald"
+                            className="br-pill no-underline white f4 ph3 pv3 grow outline-0 bn pointer avenir ttu emerald"
                         >
                             Demo Development Server
                     </button>
